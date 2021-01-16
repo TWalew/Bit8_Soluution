@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Students</h2>
+
+<div>
+    <button id="reactivity-add">Add New Row</button>
+    <button id="reactivity-delete">Remove Row</button>
+</div>
+
+<div id="example-table-theme"></div>
+<script>
+
+    $(document).ready(function () {
+
+        function updateStudent(data) {
+            console.log(data);
+            $.ajax({
+                url: 'http://localhost:54823/api/students',
+                data: JSON.stringify({
+                    "Id": data.id,
+                    "Name": data.studentName,
+@*                    "SemesterNames": data.semesterNames*@
+                }),
+                type: 'PATCH',
+                contentType: 'application/json'
+            });
+        };
+
+        var tabledata = [];
+
+        var table = new Tabulator("#example-table-theme", {
+            layout: "fitColumns",
+            reactiveData: true,
+            cellEdited: function (cell) {
+                updateStudent(cell.getData());
+            },
+            columns: [
+                { title: "Student Name", field: "studentName", editor: "input" },
+                { title: "Semester Names", field: "semesterNames", editor: "input" }
+            ],
+        });
+
+        //add row to bottom of table on button click
+        document.getElementById("reactivity-add").addEventListener("click", function () {
+            var n = { studentName: "Student Name", semesterNames: "Semesters Name" };
+            $.ajax({
+                url: 'http://localhost:54823/api/students',
+                type: 'POST',
+                data: JSON.stringify({
+                    name: 'Student Name',
+                    semesterNames: ''
+                }),
+                contentType: 'application/json',
+                success: function (result) {
+                    $.ajax({
+                        url: 'http://localhost:54823/api/students/semesters',
+                        type: 'POST',
+                        data: JSON.stringify({
+                            studentId: result,
+                            semesterId: 1
+                        }),
+                        contentType: 'application/json',
+                        success: function (result) {
+
+                            tabledata.push(n);
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
+        });
+
+        //remove bottom row from table on button click
+        document.getElementById("reactivity-delete").addEventListener("click", function () {
+            $.ajax({
+                url: 'http://localhost:54823/api/students',
+                type: 'DELETE',
+                data: JSON.stringify(tabledata.length),
+                contentType: 'application/json',
+                success: function (result) {
+                    tabledata.pop();
+                },
+                error: function (error) {
+                    console.log(error)
+                    alert('An error occured when trying to delete Discipline. DIscipline canno\'t be removed if there is a student which has a score on it.');
+                }
+            });
+
+        });
+
+
+        $.get("http://localhost:54823/api/students", function (data) {
+            tabledata = data;
+            table.setData(data);
+        });
+    });
+</script>

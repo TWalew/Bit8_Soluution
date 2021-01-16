@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "TopTen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Top 10</h2>
+
+<div id="example-table"></div>
+
+<script>
+
+    $(document).ready(function () {
+
+        var table = new Tabulator("#example-table", {
+            columns: [
+                { title: "Name", field: "name" },
+                { title: "Average Score", field: "averageScore", sorter: "number" }
+            ],
+        });
+        
+        $.get("http://localhost:54823/api/students/sets/top-ten", function (data) {
+            table.setData(data);
+        });
+
+    });
+</script>

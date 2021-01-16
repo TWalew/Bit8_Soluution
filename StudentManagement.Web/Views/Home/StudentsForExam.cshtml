@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "StudentsForExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>StudentsForExam</h2>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $.get("http://localhost:54823/api/students/sets/disciplines-without-score", function (data) {
+            console.log(data);
+        });
+    });
+</script>

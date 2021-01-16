@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Semesters";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Semesters</h2>
+
+
+<div>
+    <button id="reactivity-add">Add New Row</button>
+    <button id="reactivity-delete">Remove Row</button>
+</div>
+
+<div id="example-table-theme"></div>
+<script>
+
+    $(document).ready(function () {
+
+        function updateSemester(data) {
+            $.ajax({
+                url: 'http://localhost:54823/api/semester',
+                data: JSON.stringify({
+                    'Id': data.id,
+                    "Name": data.semesterName,
+                    @*"DisciplineNames": data.disciplineNames*@
+                }),
+                type: 'PATCH',
+                contentType: 'application/json'
+            });
+        };
+
+        var tabledata = [];
+        var disciplines = [];
+
+        var table = new Tabulator("#example-table-theme", {
+            layout: "fitColumns",
+            reactiveData: true,
+            cellEdited: function (cell) {
+                console.log(cell)
+                console.log(cell.getRow().getData());
+                updateSemester(cell.getRow().getData());
+            },
+            columns: [
+                { title: "ID", field: "id" },
+                { title: "Semester Name", field: "semesterName", editor: "input" },
+                { title: "Discipline Names", field: "disciplineNames", editor: "input" },
+            ],
+        });
+
+        //add row to bottom of table on button click
+        document.getElementById("reactivity-add").addEventListener("click", function () {
+            console.log(disciplines)
+            var n = { Id: tabledata.length + 1, Name: "Semester Name", DisciplineIds: disciplines };
+            $.ajax({
+                url: 'http://localhost:54823/api/semester',
+                type: 'POST',
+                data: JSON.stringify({
+                    id: tabledata.length + 1,
+                    name: "Semester Name",
+                    disciplineIds: disciplines
+                }),
+                contentType: 'application/json',
+                success: function (result) {
+                    var nT = { id: n.Id, semesterName: n.Name, disciplineNames: "" };
+                    tabledata.push(nT);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        //remove bottom row from table on button click
+        document.getElementById("reactivity-delete").addEventListener("click", function () {
+            $.ajax({
+                url: 'http://localhost:54823/api/semester',
+                type: 'DELETE', 
+                data: JSON.stringify(tabledata.length),
+                contentType: 'application/json',
+                success: function (result) {
+                    tabledata.pop();
+                },
+                error: function (error) {
+                    console.log(error)
+                    alert('An error occured when trying to delete Semester. Semester canno\'t be removed if there are student\'s assigned to it.');
+                }
+            });
+        });
+
+        $.get("http://localhost:54823/api/semester", function (data) {
+            console.log(data);
+            tabledata = data;
+            for (var i = 1; i < data[0].disciplineNames.length + 1; i++) {
+                console.log()
+                disciplines.push(i);
+            }
+            table.setData(data);
+        });
+    });
+</script>

@@ -1,0 +1,12 @@
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\bin\Debug\netstandard2.0\StudentManagement.Domain.deps.json
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\bin\Debug\netstandard2.0\StudentManagement.Domain.dll
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\bin\Debug\netstandard2.0\StudentManagement.Domain.pdb
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\bin\Debug\netstandard2.0\StudentManagement.Common.dll
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\bin\Debug\netstandard2.0\StudentManagement.Common.pdb
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.csprojAssemblyReference.cache
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.AssemblyInfo.cs
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.csproj.CopyComplete
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.dll
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Domain\obj\Debug\netstandard2.0\StudentManagement.Domain.pdb

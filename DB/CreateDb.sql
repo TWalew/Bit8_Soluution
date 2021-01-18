@@ -41,7 +41,7 @@ create table student
     id          int auto_increment
         primary key,
     name        varchar(128) charset utf8 not null,
-    semester_id int                       null,
+    semester_id int not null,
     constraint student_semester_id_fk
         foreign key (semester_id) references semester (id)
 );
@@ -81,7 +81,7 @@ INSERT INTO student_db.student (id, name) VALUES (2, 'Monika Jelqzkova');
 INSERT INTO student_db.student (id, name) VALUES (3, 'Dara Valeva');
 INSERT INTO student_db.student (id, name) VALUES (4, 'Sakura Jelqzkowa');
 
-INSERT INTO student_db.student (id, name) VALUES (22, 'Bad Student');
+INSERT INTO student_db.student (id, name) VALUES (5, 'Bad Student');
 
 
 INSERT INTO student_db.student_scores (id, discipline_semester_id, student_id, score) VALUES (1, 1, 1, 6.0);
@@ -109,4 +109,19 @@ select s.id, s.name semester, d.name discipline from semester s
                             
 select s.id ,s.name semester, d.name discipline from semester s
                             join discipline_semester ds on s.id = ds.semester_id
-                            join discipline d on ds.discipline_id = d.id
+                            join discipline d on ds.discipline_id = d.id;
+                            
+                            
+                            select without_scores.sname student_name, without_scores.dname discipline_name from (
+                            select distinct s.id sid, d.id did from student s
+                            right join student_scores sa on s.id = sa.student_id
+                            right join discipline_semester ds on sa.discipline_semester_id = ds.id
+                            right join discipline d on ds.discipline_id = d.id
+                            where sa.score is not null) as with_scores
+                        right join (
+                                select s.id sid, d.id did, s.name sname, d.name dname from student s
+                                cross join discipline d
+                                ) as without_scores on without_scores.sid = with_scores.sid and without_scores.did = with_scores.did
+                        where with_scores.sid is null and with_scores.did is null;
+                        
+                        update student set name="LOL", semester_id=1 where id=3

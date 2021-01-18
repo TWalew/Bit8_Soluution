@@ -76,3 +76,4 @@ C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Web\obj\Debug\Stude
 C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Web\obj\Debug\StudentManagement.Web.csproj.CopyComplete
 C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Web\obj\Debug\StudentManagement.Web.dll
 C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Web\obj\Debug\StudentManagement.Web.pdb
+C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Web\obj\Debug\StudentManagement.Web.csprojAssemblyReference.cache

@@ -17,13 +17,13 @@ create index disciplines_id_index
 create table semester
 (
     name varchar(128) charset utf8 not null,
-    id   int                       not null
+    id   int auto_increment not null
         primary key
 );
 
 create table discipline_semester
 (
-    id            int auto_increment
+    id            int auto_increment not null
 		primary key,
     semester_id   int not null,
     discipline_id int not null,
@@ -38,7 +38,7 @@ create table student
     id          int auto_increment
         primary key,
     name        varchar(128) charset utf8 not null,
-    semester_id int                       null,
+    semester_id int not null,
     constraint student_semester_id_fk
         foreign key (semester_id) references semester (id)
 );

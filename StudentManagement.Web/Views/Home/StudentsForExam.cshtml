@@ -1,18 +1,27 @@
 ﻿
 @{
-    ViewBag.Title = "StudentsForExam";
+    ViewBag.Title = "Students For Exam";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>StudentsForExam</h2>
+<h2>@ViewBag.Title</h2>
 
 
-
+<div id="example-table-theme" class="row"></div>
 
 <script>
     $(document).ready(function () {
+
+        var table = new Tabulator("#example-table-theme", {
+            layout: "fitColumns",
+            columns: [
+                { title: "Name", field: "studentName" },
+                { title: "Discipline Names", field: "disciplineNames", sorter: "string" }
+            ],
+        });
+
         $.get("http://localhost:54823/api/students/sets/disciplines-without-score", function (data) {
-            console.log(data);
+            table.setData(data);
         });
     });
 </script>

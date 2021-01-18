@@ -4,15 +4,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Semesters</h2>
+<h2>@ViewBag.Title</h2>
 
 
-<div>
-    <button id="reactivity-add">Add New Row</button>
-    <button id="reactivity-delete">Remove Row</button>
+<div class="row">
+    <div class="col-lg-offset-3 col-lg-6 text-center">
+        <button id="reactivity-add" class="btn btn-sm btn-success">Add New Row</button>
+        <button id="reactivity-delete" class="col-lg-offset-1 btn btn-sm btn-danger">Remove Row</button>
+    </div>
 </div>
 
-<div id="example-table-theme"></div>
+<div id="example-table-theme" class="row"></div>
 <script>
 
     $(document).ready(function () {
@@ -75,7 +77,7 @@
         document.getElementById("reactivity-delete").addEventListener("click", function () {
             $.ajax({
                 url: 'http://localhost:54823/api/semester',
-                type: 'DELETE', 
+                type: 'DELETE',
                 data: JSON.stringify(tabledata.length),
                 contentType: 'application/json',
                 success: function (result) {

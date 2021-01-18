@@ -40,27 +40,27 @@ namespace StudentManagement.Query.Students
                         where with_scores.sid is null and with_scores.did is null";
 
             var result = await Connection.QueryAsync(sql, 
-                (int id, string student, string discipline) => new {id, student, discipline}, 
+                (string student, string discipline) => new {student, discipline}, 
                 splitOn: "discipline_name");
             
-            return result.GroupBy(x => new { x.id, x.student },
+            return result.GroupBy(x => x.student,
                     (key, group) => new GetDisciplinesWithoutScoreQuery
                     {
-                        Id = key.id,
-                        StudentName = key.student, 
+                        StudentName = key, 
                         DisciplineNames = group.Select(x => x.discipline)
                     });
+
         }
 
         public async Task<IEnumerable<GetAllWithSemestersQuery>> GetAllWithSemestersAsync()
         {
-            var sql = @"select s.name student, sm.name semester from student s
+            var sql = @"select s.id, s.name student, sm.name semester from student s
                         join student_scores sa on s.id = sa.student_id
                         join discipline_semester ds on sa.discipline_semester_id = ds.id
                         join semester sm on ds.semester_id = sm.id";
 
             var result = await Connection.QueryAsync(sql, (int id, string student, string semester) => new {id, student, semester},
-                splitOn: "semester");
+                splitOn: "student,semester");
 
             return result
                 .GroupBy(x => new { x.id, x.student },

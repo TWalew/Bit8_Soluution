@@ -6,12 +6,14 @@
 
 <h2>Disciplines</h2>
 
-<div>
-    <button id="reactivity-add">Add New Row</button>
-    <button id="reactivity-delete">Remove Row</button>
+<div class="row">
+    <div class="col-lg-offset-3 col-lg-6 text-center">
+        <button id="reactivity-add" class="btn btn-sm btn-success">Add New Row</button>
+        <button id="reactivity-delete" class="col-lg-offset-1 btn btn-sm btn-danger">Remove Row</button>
+    </div>
 </div>
 
-<div id="example-table-theme"></div>
+<div id="example-table-theme" class="row"></div>
 <script>
 
     $(document).ready(function () {
@@ -39,7 +41,7 @@
                 updateDiscipline(cell.getRow().getData());
             },
             columns: [
-                { title: "ID" , field: "id"},
+                { title: "ID", field: "id" },
                 { title: "Name", field: "name", editor: "input" },
                 {
                     title: "Proffesor Name", field: "professorName", editor: "input"
@@ -77,9 +79,9 @@
                 error: function (error) {
                     console.log(error)
                     alert('An error occured when trying to delete Discipline. DIscipline canno\'t be removed if there is a student which has a score on it.');
-                }      
+                }
             });
-            
+
         });
 
 

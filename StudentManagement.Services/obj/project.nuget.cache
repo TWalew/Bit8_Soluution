@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "omaiUDTJLqiVXcbXhW9/7Q1UXTfLI0KOy7aLgpB+3Y46PIsr2JRYhkNYnjRA47EFVFa/sX1RDadfT8jppgS7DA==",
+  "dgSpecHash": "PcH8Uyjh6phxj7syHDsbSM/5QxwSwSbvMgdbU5Py5YEn/wFy3XDFLIO9IlgrJzNSQGlB7bpi5Ub8nQa0HvYgIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Services\\StudentManagement.Services.csproj",
+  "projectFilePath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Services\\StudentManagement.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\My-PC\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\My-PC\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",

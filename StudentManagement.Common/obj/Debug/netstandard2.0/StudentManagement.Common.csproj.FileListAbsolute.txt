@@ -6,3 +6,12 @@ C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Common\obj\Debug\ne
 C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.csproj.CoreCompileInputs.cache
 C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.dll
 C:\Users\My-PC\source\repos\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.pdb
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\bin\Debug\netstandard2.0\StudentManagement.Common.deps.json
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\bin\Debug\netstandard2.0\StudentManagement.Common.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\bin\Debug\netstandard2.0\StudentManagement.Common.pdb
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.csprojAssemblyReference.cache
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.AssemblyInfoInputs.cache
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.AssemblyInfo.cs
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.csproj.CoreCompileInputs.cache
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Common\obj\Debug\netstandard2.0\StudentManagement.Common.pdb

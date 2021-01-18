@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj": {}
+    "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
+    "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
+        "projectUniqueName": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
         "projectName": "StudentManagement.Common",
-        "projectPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
+        "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
         "packagesPath": "C:\\Users\\My-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\obj\\",
+        "outputPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj": {
+    "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj",
         "projectName": "StudentManagement.Domain",
-        "projectPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\My-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -107,8 +107,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
-                "projectPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj"
+              "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
+                "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj"
               }
             }
           }
@@ -144,14 +144,14 @@
         }
       }
     },
-    "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj": {
+    "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj",
         "projectName": "StudentManagement.Entities",
-        "projectPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj",
+        "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Entities\\StudentManagement.Entities.csproj",
         "packagesPath": "C:\\Users\\My-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Entities\\obj\\",
+        "outputPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -173,11 +173,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
-                "projectPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj"
+              "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
+                "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj"
               },
-              "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\My-PC\\source\\repos\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj"
+              "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Domain\\StudentManagement.Domain.csproj"
               }
             }
           }

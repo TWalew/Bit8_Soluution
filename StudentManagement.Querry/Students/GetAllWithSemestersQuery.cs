@@ -7,5 +7,7 @@ namespace StudentManagement.Query.Students
         public int Id { get; set; }
         public string StudentName { get; set; }
         public IEnumerable<string> SemesterNames { get; set; }
+
+        public IEnumerable<string> SemesterScores { get; set; }
     }
 }

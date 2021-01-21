@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oS5PzS5ZUcD6b7qo19Pv+SB0w6NDpuz9OBo+sa3pesFi7Z2Ps8eG63Z3cmwKWO1/r8mfyVvv/DI5aI8/+wNrxA==",
+  "dgSpecHash": "qMMb21qKaRSOjrPc7dKoqhEK9+9tBTt+J3Gct7BgZQjkTzGMZ47bW/JaCXsFCu7JsmtGXU81BxSzsEPo1MmpBQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
+  "projectFilePath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\My-PC\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\My-PC\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

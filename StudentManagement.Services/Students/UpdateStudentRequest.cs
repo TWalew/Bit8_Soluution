@@ -1,4 +1,5 @@
 using FluentValidation;
+using System.Collections.Generic;
 
 namespace StudentManagement.Services.Students
 {
@@ -6,6 +7,9 @@ namespace StudentManagement.Services.Students
     {
         public string Name { get; set; }
         public int Id { get; set; }
+        public bool addOrRemove { get; set; }
+        public int SemesterId { get; set; }
+        public ICollection<int> SemesterIds { get; set; }
     }
     
     public class UpdateStudentRequestValidator : AbstractValidator<UpdateStudentRequest>

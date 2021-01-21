@@ -12,7 +12,7 @@
           "FluentResults": "2.3.0",
           "FluentValidation": "9.4.0",
           "NETStandard.Library": "2.0.3",
-          "StudentManagement.Entities": "1.0.0"
+          "StudentManagement.Repositoryes": "1.0.0"
         },
         "runtime": {
           "StudentManagement.Services.dll": {}
@@ -994,23 +994,23 @@
           "StudentManagement.Common.dll": {}
         }
       },
-      "StudentManagement.Domain/1.0.0": {
+      "StudentManagement.Models/1.0.0": {
         "dependencies": {
           "StudentManagement.Common": "1.0.0"
         },
         "runtime": {
-          "StudentManagement.Domain.dll": {}
+          "StudentManagement.Models.dll": {}
         }
       },
-      "StudentManagement.Entities/1.0.0": {
+      "StudentManagement.Repositoryes/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.22",
           "StudentManagement.Common": "1.0.0",
-          "StudentManagement.Domain": "1.0.0",
+          "StudentManagement.Models": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
-          "StudentManagement.Entities.dll": {}
+          "StudentManagement.Repositoryes.dll": {}
         }
       }
     }
@@ -1614,12 +1614,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "StudentManagement.Domain/1.0.0": {
+    "StudentManagement.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "StudentManagement.Entities/1.0.0": {
+    "StudentManagement.Repositoryes/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

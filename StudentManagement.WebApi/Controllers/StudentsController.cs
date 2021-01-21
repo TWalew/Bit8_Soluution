@@ -65,7 +65,7 @@ namespace StudentManagement.WebApi.Controllers
         }
         
         [HttpPatch]
-        public async Task<IActionResult> UpdateDiscipline(UpdateStudentRequest request)
+        public async Task<IActionResult> UpdateStudent(UpdateStudentRequest request)
         {
             var result = await _studentService.UpdateAsync(request);
             

@@ -4805,11 +4805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Querry\\StudentManagement.Querry.csproj",
-      "projectName": "StudentManagement.Querry",
-      "projectPath": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Querry\\StudentManagement.Querry.csproj",
+      "projectUniqueName": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Querry\\StudentManagement.Querryes.csproj",
+      "projectName": "StudentManagement.Querryes",
+      "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Querry\\StudentManagement.Querryes.csproj",
       "packagesPath": "C:\\Users\\My-PC\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Querry\\obj\\",
+      "outputPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Querry\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -4831,8 +4831,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
-              "projectPath": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj"
+            "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
+              "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj"
             }
           }
         }

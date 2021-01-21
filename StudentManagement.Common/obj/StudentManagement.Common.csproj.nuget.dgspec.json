@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {}
+    "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {}
   },
   "projects": {
-    "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
+    "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
+        "projectUniqueName": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
         "projectName": "StudentManagement.Common",
-        "projectPath": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
+        "projectPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\StudentManagement.Common.csproj",
         "packagesPath": "C:\\Users\\My-PC\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\obj\\",
+        "outputPath": "C:\\Users\\My-PC\\Documents\\GitHub\\dev-stack\\code\\Bit8_Soluution\\StudentManagement.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

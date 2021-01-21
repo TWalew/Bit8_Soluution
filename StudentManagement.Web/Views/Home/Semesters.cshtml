@@ -18,41 +18,83 @@
 <script>
 
     $(document).ready(function () {
-
+        getAll();
+        var tabledata = [];
+        var disciplines = [];
+        var allDisciplines = [];
+        $.get("http://localhost:54823/api/disciplines", function (data) {
+            data.forEach(function (item) {
+                allDisciplines.push({
+                    label: item.name,
+                    value: item.id
+                });
+            });
+        });
         function updateSemester(data) {
+            let discIds = []
+            if (data.disciplineIds) {
+                discIds.push(data.disciplineIds);
+            }
+            
             $.ajax({
                 url: 'http://localhost:54823/api/semester',
                 data: JSON.stringify({
                     'Id': data.id,
                     "Name": data.semesterName,
+                    "StartDate": new Date(),
+                    "EndDate": new Date(),
+                    "addOrRemove": data.addOrRemove,
+                    "disciplineIds": discIds
                     @*"DisciplineNames": data.disciplineNames*@
                 }),
+                success: function (result) {
+                    getAll();
+                },
+                error: function (error) {
+                    alert(error);
+                },
                 type: 'PATCH',
                 contentType: 'application/json'
             });
         };
 
-        var tabledata = [];
-        var disciplines = [];
-
         var table = new Tabulator("#example-table-theme", {
             layout: "fitColumns",
             reactiveData: true,
             cellEdited: function (cell) {
-                console.log(cell)
-                console.log(cell.getRow().getData());
+                let data = cell.getRow().getData();
+                if (cell._cell.column.definition.field === "disciplineAdd") {
+                    data.addOrRemove = true;
+                    data.disciplineIds = cell._cell.value;
+                }
+                else if (cell._cell.column.definition.field === "disciplineRemove") {
+                    data.addOrRemove = false;
+                    data.disciplineIds = cell._cell.value;
+                }
                 updateSemester(cell.getRow().getData());
             },
             columns: [
                 { title: "ID", field: "id" },
                 { title: "Semester Name", field: "semesterName", editor: "input" },
-                { title: "Discipline Names", field: "disciplineNames", editor: "input" },
+                { title: "Start Date", field: "startDate", editor: "input" },
+                { title: "End Date", field: "endDate", editor: "input" },
+                {
+                    title: "Discipline Names", field: "disciplineNames"},
+                {
+                    title: "Add Disciplines", field: "disciplineAdd", editor: "select", editorParams: {
+                        values: allDisciplines
+                    }
+                },
+                {
+                    title: "Remove Discipline", field: "disciplineRemove", editor: "select", editorParams: {
+                        values: allDisciplines
+                    }
+                },
             ],
         });
 
         //add row to bottom of table on button click
         document.getElementById("reactivity-add").addEventListener("click", function () {
-            console.log(disciplines)
             var n = { Id: tabledata.length + 1, Name: "Semester Name", DisciplineIds: disciplines };
             $.ajax({
                 url: 'http://localhost:54823/api/semester',
@@ -60,15 +102,18 @@
                 data: JSON.stringify({
                     id: tabledata.length + 1,
                     name: "Semester Name",
+                    startDate: new Date(),
+                    endDate: new Date(),
                     disciplineIds: disciplines
                 }),
                 contentType: 'application/json',
                 success: function (result) {
                     var nT = { id: n.Id, semesterName: n.Name, disciplineNames: "" };
                     tabledata.push(nT);
+                    getAll();
                 },
                 error: function (error) {
-                    console.log(error);
+                    alert(error);
                 }
             });
         });
@@ -82,22 +127,23 @@
                 contentType: 'application/json',
                 success: function (result) {
                     tabledata.pop();
+                    getAll();
                 },
                 error: function (error) {
-                    console.log(error)
+                    alert(error)
                     alert('An error occured when trying to delete Semester. Semester canno\'t be removed if there are student\'s assigned to it.');
                 }
             });
         });
 
-        $.get("http://localhost:54823/api/semester", function (data) {
-            console.log(data);
-            tabledata = data;
-            for (var i = 1; i < data[0].disciplineNames.length + 1; i++) {
-                console.log()
-                disciplines.push(i);
-            }
-            table.setData(data);
-        });
+        function getAll() {
+            $.get("http://localhost:54823/api/semester", function (data) {
+                tabledata = data;
+                for (var i = 1; i < data[0].disciplineNames.length + 1; i++) {
+                    disciplines.push(i);
+                }
+                table.setData(data);
+            });
+        };
     });
 </script>

@@ -19,7 +19,6 @@
     $(document).ready(function () {
 
         function updateDiscipline(data) {
-            console.log(data);
             $.ajax({
                 url: 'http://localhost:54823/api/disciplines',
                 data: JSON.stringify({
@@ -61,7 +60,7 @@
                     tabledata.push(n);
                 },
                 error: function (error) {
-                    console.log(error)
+                    alert(error)
                 }
             });
         });
@@ -77,7 +76,7 @@
                     tabledata.pop();
                 },
                 error: function (error) {
-                    console.log(error)
+                    alert(error)
                     alert('An error occured when trying to delete Discipline. DIscipline canno\'t be removed if there is a student which has a score on it.');
                 }
             });

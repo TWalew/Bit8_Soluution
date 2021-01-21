@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using StudentManagement.Domain.Models;
 using StudentManagement.Entities;
 using FluentResults;
+using System;
 
 namespace StudentManagement.Services.Semesters
 {
@@ -16,7 +17,7 @@ namespace StudentManagement.Services.Semesters
         
         public async Task<Result<int>> CreateAsync(CreateSemesterRequest request)
         {
-            var semester = new Semester { Name = request.Name };
+            var semester = new Semester { Name = request.Name, StartDate = request.StartDate, EndDate = request.EndDate };
             
             await _uow.SemesterRepository.AddAsync(semester);
 
@@ -35,8 +36,22 @@ namespace StudentManagement.Services.Semesters
             {
                 return Result.Fail("Semester with given id does not exist");
             }
+            Console.WriteLine(request);
+            await _uow.SemesterRepository.UpdateAsync(new Semester {Id = request.Id, Name = request.Name, StartDate = request.StartDate, EndDate = request.EndDate});
 
-            await _uow.StudentRepository.UpdateAsync(new Student {Id = request.Id, Name = request.Name});
+            if(request.addOrRemove)
+            {
+                foreach (var disciplineId in request.DisciplineIds)
+                {
+                    await _uow.SemesterRepository.AddRelationToDisciplineAsync(request.Id, disciplineId);
+                }
+            } else
+            {
+                foreach (var disciplineId in request.DisciplineIds)
+                {
+                    await _uow.SemesterRepository.RemoveRelationToDisciplineAsync(request.Id, disciplineId);
+                }
+            }
             _uow.Commit();
             return Result.Ok();
         }

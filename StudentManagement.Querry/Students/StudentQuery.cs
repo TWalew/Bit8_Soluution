@@ -54,13 +54,17 @@ namespace StudentManagement.Query.Students
 
         public async Task<IEnumerable<GetAllWithSemestersQuery>> GetAllWithSemestersAsync()
         {
-            var sql = @"select s.id, s.name student, sm.name semester from student s
-                        join student_scores sa on s.id = sa.student_id
-                        join discipline_semester ds on sa.discipline_semester_id = ds.id
-                        join semester sm on ds.semester_id = sm.id";
+            var sql = @"select s.id, s.name Student,
+                        concat((select group_concat(distinct sm.name))) as Semesters,
+                        group_concat(distinct sm.name, ' - ', Coalesce(sa.score) separator ',   ') as Scores
+						from student s
+                        join student_scores as sa on s.id = sa.student_id
+                        join discipline_semester as ds on sa.discipline_semester_id = ds.semester_id
+                        join semester as sm on ds.semester_id = sm.id
+                        group by s.id;";
 
-            var result = await Connection.QueryAsync(sql, (int id, string student, string semester) => new {id, student, semester},
-                splitOn: "student,semester");
+            var result = await Connection.QueryAsync(sql, (int id, string student, string semesters, string scores) => new {id, student, semesters, scores},
+                splitOn: "Student,Semesters,Scores");
 
             return result
                 .GroupBy(x => new { x.id, x.student },
@@ -68,7 +72,8 @@ namespace StudentManagement.Query.Students
                     {
                         Id = key.id,
                         StudentName = key.student,
-                        SemesterNames = group.Select(x => x.semester)
+                        SemesterNames = group.Select(x => x.semesters),
+                        SemesterScores = group.Select(x => x.scores)
                     });
         }
     }

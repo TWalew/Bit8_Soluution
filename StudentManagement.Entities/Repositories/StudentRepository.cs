@@ -19,7 +19,7 @@ namespace StudentManagement.Entities.Repositories
         {
             entity.Id = await _transaction.Connection.ExecuteScalarAsync<int>(
                 "insert into student(name) values(@Name); select LAST_INSERT_ID()",
-                new {Name = entity.Name},
+                new {Name = entity.Name, SemesterId = entity.SemesterId},
                 _transaction);
         }
 
@@ -46,6 +46,18 @@ namespace StudentManagement.Entities.Repositories
         {
             var sql = @"select * from student where id=@Id";
             return await _transaction.Connection.QuerySingleAsync<Student>(sql, new {Id = id});
+        }
+
+        public async Task AddRelationToSemesterAsync(int studentId, int semesterId)
+        {
+            var sql = @"update student set semester_id=@semesterId where id=@studentId;";
+            await _transaction.Connection.ExecuteAsync(sql, new { studentId, semesterId });
+        }
+
+        public async Task RemoveRelationToSemesterAsync(int studentId, int semesterId)
+        {
+            var sql = @"update student set semester_id=@semesterId where id=@studentId;";
+            await _transaction.Connection.ExecuteAsync(sql, new { studentId, semesterId });
         }
 
         public async Task<bool> ExistsAsync(int id)

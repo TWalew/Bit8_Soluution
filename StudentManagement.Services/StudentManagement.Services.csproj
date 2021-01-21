@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentManagement.Entities\StudentManagement.Entities.csproj" />
+    <ProjectReference Include="..\StudentManagement.Entities\StudentManagement.Repositoryes.csproj" />
   </ItemGroup>
 
 </Project>

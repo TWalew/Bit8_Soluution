@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using StudentManagement.Common;
 using Dapper;
+using System;
 
 namespace StudentManagement.Query.Semesters
 {
@@ -14,19 +15,23 @@ namespace StudentManagement.Query.Semesters
 
         public async Task<IEnumerable<GetAllWithDisciplinesQuery>> GetAllWithDisciplinesAsync()
         {
-            var sql = @"select s.id, s.name semester, d.name discipline from semester s
-                            join discipline_semester ds on s.id = ds.id
-                            join discipline d on ds.discipline_id = d.id;";
+            var sql = @"select s.id, s.name SemesterName, s.startDate StartDate, s.endDate EndDate, (SELECT group_concat(d.name)) as Discipline from semester s
+							join discipline_semester ds on s.id = ds.semester_id
+							join discipline d on ds.discipline_id = d.id
+                            GROUP BY s.id";
 
             var result = await Connection.QueryAsync(sql,
-                (int id, string semester, string discipline) => new {id, semester, discipline}, 
-                splitOn: "semester,discipline");
+                (int id, string name, DateTime startDate, DateTime endDate, string discipline) 
+                => new {id, name, startDate, endDate, discipline}, 
+                splitOn: "SemesterName,StartDate,EndDate,Discipline");
             
-            return result.GroupBy(x => new  { x.id, x.semester },
+            return result.GroupBy(x => new  { x.id, x.name, x.startDate, x.endDate },
                 (key, group) => new GetAllWithDisciplinesQuery
                 {
                     Id = key.id,
-                    SemesterName = key.semester, 
+                    SemesterName = key.name,
+                    StartDate = key.startDate,
+                    EndDate = key.endDate,
                     DisciplineNames = group.Select(x => x.discipline)
                 });
         }

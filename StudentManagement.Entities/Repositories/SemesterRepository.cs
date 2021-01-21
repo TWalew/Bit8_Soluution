@@ -25,9 +25,10 @@ namespace StudentManagement.Entities.Repositories
 
         }
 
-        public async Task DeleteAsync(Semester entity)
+        public async Task UpdateAsync(Semester entity)
         {
-            await DeleteAsync(entity.Id);
+            var sql = @"update semester set name=@Name, startDate=@StartDate, endDate=@EndDate where id=@Id";
+            await _transaction.Connection.ExecuteAsync(sql, entity);
         }
 
         public async Task DeleteAsync(int id)
@@ -47,6 +48,12 @@ namespace StudentManagement.Entities.Repositories
         public async Task AddRelationToDisciplineAsync(int semesterId, int disciplineId)
         {
             var sql = @"insert into discipline_semester(semester_id, discipline_id) values(@semesterId, @disciplineId)";
+            await _transaction.Connection.ExecuteAsync(sql, new { semesterId, disciplineId });
+        }
+
+        public async Task RemoveRelationToDisciplineAsync(int semesterId, int disciplineId)
+        {
+            var sql = @"delete from discipline_semester where semester_id = @semesterId and discipline_id = @disciplineId";
             await _transaction.Connection.ExecuteAsync(sql, new { semesterId, disciplineId });
         }
 

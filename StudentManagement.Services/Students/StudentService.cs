@@ -16,8 +16,8 @@ namespace StudentManagement.Services.Students
         
         public async Task<Result<int>> CreateAsync(CreateStudentRequest request)
         {
-            var student = new Student { Name = request.Name };
-            
+
+            var student = new Student { Name = request.Name};
             await _uow.StudentRepository.AddAsync(student);
             _uow.Commit();
 
@@ -61,8 +61,23 @@ namespace StudentManagement.Services.Students
 
             if (result.IsFailed) 
                 return result;
+            if (request.addOrRemove)
+            {
+                foreach (var semesterId in request.SemesterIds)
+                {
+                    await _uow.StudentRepository.AddRelationToSemesterAsync(request.Id, semesterId);
+                }
+            }
+            else
+            {
+                foreach (var semesterId in request.SemesterIds)
+                {
+                    await _uow.StudentRepository.RemoveRelationToSemesterAsync(request.Id, semesterId);
+                }
+            }
+            await _uow.StudentRepository.UpdateAsync(new Student {Id = request.Id, Name = request.Name, SemesterId = request.SemesterId});
 
-            await _uow.StudentRepository.UpdateAsync(new Student {Id = request.Id, Name = request.Name});
+
             _uow.Commit();
             return result;
         }

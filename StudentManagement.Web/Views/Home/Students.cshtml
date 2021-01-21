@@ -17,42 +17,85 @@
 <script>
 
     $(document).ready(function () {
+        var tabledata = [];
+        var allSemesters = [];
+        getAll();
+        $.get("http://localhost:54823/api/semester", function (data) {
+            data.forEach(function (item) {
+                allSemesters.push({
+                    label: item.semesterName,
+                    value: item.id
+                });
+            });
+        });
 
         function updateStudent(data) {
+            let semIds = [];
+            if (data.semesterId) {
+                semIds.push(data.semesterId);
+            }
             $.ajax({
                 url: 'http://localhost:54823/api/students',
                 data: JSON.stringify({
                     "Id": data.id,
                     "Name": data.studentName,
-                }),
+                    "SemesterIds": semIds,
+                    "SemesterId": data.semesterId
+                }), 
+                success: function (result) {
+                    getAll();
+                    tabledata.pop();
+                },
+                error: function (error) {
+                    alert(error)
+                    alert('An error occured when trying to delete Student. Students canno\'t be removed if there is a semester with a score on it.');
+                },
                 type: 'PATCH',
                 contentType: 'application/json'
             });
         };
 
-        var tabledata = [];
-
         var table = new Tabulator("#example-table-theme", {
             layout: "fitColumns",
             reactiveData: true,
             cellEdited: function (cell) {
-                updateStudent(cell.getData());
+                let data = cell.getRow().getData();
+                if (cell._cell.column.definition.field === "semesterAdd") {
+                    data.addOrRemove = true;
+                    data.semesterId = cell._cell.value;
+                }
+                else if (cell._cell.column.definition.field === "semesterRemove") {
+                    data.addOrRemove = false;
+                    data.semesterId = cell._cell.value;
+                }
+                updateStudent(data);
             },
             columns: [
+                { title: "ID", field: "id" },
                 { title: "Student Name", field: "studentName", editor: "input" },
-                { title: "Semester Names", field: "semesterNames", editor: "input" }
+                { title: "Semester Names", field: "semesterNames", editor: "input" },
+                { title: "Semester Scores", field: "semesterScores", editor: "input" },
+                {
+                    title: "Add Semester", field: "semesterAdd", editor: "select", editorParams: {
+                        values: allSemesters
+                    }
+                },
+                {
+                    title: "Remove Semester", field: "semesterRemove", editor: "select", editorParams: {
+                        values: allSemesters
+                    }
+                },
             ],
         });
 
         //add row to bottom of table on button click
         document.getElementById("reactivity-add").addEventListener("click", function () {
-            var n = { studentName: "Student Name", semesterNames: "Semesters Name" };
+            var n = { id: tabledata.length, studentName: "Student Name", semesterNames: "Semesters Name" };
             $.ajax({
                 url: 'http://localhost:54823/api/students',
                 type: 'POST',
                 data: JSON.stringify({
-                    name: 'Student Name',
-                    semesterNames: ''
+                    'Name': 'Student Name',
                 }),
                 contentType: 'application/json',
                 success: function (result) {
@@ -65,16 +108,15 @@
                         }),
                         contentType: 'application/json',
                         success: function (result) {
-
                             tabledata.push(n);
                         },
                         error: function (error) {
-                            console.log(error)
+                            alert(error)
                         }
                     });
                 },
                 error: function (error) {
-                    console.log(error)
+                    alert(error)
                 }
             });
         });
@@ -87,10 +129,11 @@
                 data: JSON.stringify(tabledata.length),
                 contentType: 'application/json',
                 success: function (result) {
+                    getAll();
                     tabledata.pop();
                 },
                 error: function (error) {
-                    console.log(error)
+                    alert(error)
                     alert('An error occured when trying to delete Student. Students canno\'t be removed if there is a semester with a score on it.');
                 }
             });
@@ -98,9 +141,11 @@
         });
 
 
-        $.get("http://localhost:54823/api/students", function (data) {
-            tabledata = data;
-            table.setData(data);
-        });
+        function getAll() {
+            $.get("http://localhost:54823/api/students", function (data) {
+                tabledata = data;
+                table.setData(data);
+            });
+        }
     });
 </script>

@@ -24,7 +24,7 @@ namespace StudentManagement.WebApi.Controllers
         public async Task<IActionResult> CreateSemester(CreateSemesterRequest request)
         {
             var result = await _semesterService.CreateAsync(request);
-            return Ok(result.Value);
+            return Ok(result);
         }
 
         [HttpGet]

@@ -1,0 +1,12 @@
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\bin\Debug\netstandard2.0\StudentManagement.Querryes.deps.json
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\bin\Debug\netstandard2.0\StudentManagement.Querryes.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\bin\Debug\netstandard2.0\StudentManagement.Querryes.pdb
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\bin\Debug\netstandard2.0\StudentManagement.Common.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\bin\Debug\netstandard2.0\StudentManagement.Common.pdb
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.csprojAssemblyReference.cache
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.AssemblyInfoInputs.cache
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.AssemblyInfo.cs
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.csproj.CoreCompileInputs.cache
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.csproj.CopyComplete
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Querry\obj\Debug\netstandard2.0\StudentManagement.Querryes.pdb

@@ -18,11 +18,7 @@ C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Services.dll
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Services.pdb
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Common.dll
-C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Domain.dll
-C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Entities.dll
-C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Entities.pdb
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Common.pdb
-C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Domain.pdb
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\obj\Debug\netstandard2.0\StudentManagement.Services.csprojAssemblyReference.cache
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\obj\Debug\netstandard2.0\StudentManagement.Services.AssemblyInfoInputs.cache
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\obj\Debug\netstandard2.0\StudentManagement.Services.AssemblyInfo.cs
@@ -30,3 +26,7 @@ C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\obj\Debug\netstandard2.0\StudentManagement.Services.csproj.CopyComplete
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\obj\Debug\netstandard2.0\StudentManagement.Services.dll
 C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\obj\Debug\netstandard2.0\StudentManagement.Services.pdb
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Models.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Repositoryes.dll
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Repositoryes.pdb
+C:\Users\My-PC\Documents\GitHub\dev-stack\code\Bit8_Soluution\StudentManagement.Services\bin\Debug\netstandard2.0\StudentManagement.Models.pdb

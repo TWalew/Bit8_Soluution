@@ -1,2 +1,0 @@
-INSERT INTO student_db.discipline (professor_name, name, id) VALUES ('Isaac Newton', 'Physics', 1);
-INSERT INTO student_db.discipline (professor_name, name, id) VALUES ('Albert Einstein', 'Mathematics', 2);
